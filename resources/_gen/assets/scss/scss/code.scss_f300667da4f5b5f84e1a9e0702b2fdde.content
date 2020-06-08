@@ -1,0 +1,3 @@
+.post .highlight {
+  background-color: #272822;
+  margin-bottom: 2rem; }

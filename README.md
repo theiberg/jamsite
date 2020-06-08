@@ -1,0 +1,6 @@
+
+# JAMSite
+
+---
+
+Built with HUGO

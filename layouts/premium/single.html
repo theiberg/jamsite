@@ -1,0 +1,80 @@
+{{ define "main" }}
+
+<style media="screen">
+    #signin {
+        background: #DEDEDE;
+        border-radius: 5px;
+        padding: 1rem;
+    }
+
+    #signin input, #signin button {
+         display: block;
+         padding: 0.5rem 1rem;
+         width: 100%;
+         font-size: 1.25rem;
+         border-radius: 5px;
+         margin-bottom: 1rem;
+         outline: none;
+         border: none;
+    }
+
+    #signin button {
+        background: dodgerblue;
+        color: white;
+    }
+</style>
+
+<main>
+
+	<div class="post">
+		{{ partial "single/post-info.html" . }}
+		{{ partial "single/title.html" . }}
+
+		{{ partial "single/header.html" . }}
+
+		<div class="premium-content">
+			<h2 style="text-align: center;">Sign in to view premium content</h2>
+			<form id="signin">
+				<input type="text" name="username" placeholder="username" value="">
+				<input type="password" name="password" placeholder="password" value="">
+				<button type="submit" name="button">Sign in</button>
+			</form>
+		</div>
+
+		{{ partial "single/footer.html" . }}
+	</div>
+
+	<div class="pagination">
+		{{- if .PrevPage }}
+		<a href="{{ .PrevPage.RelPermalink }}" class="left arrow">&#8592;</a>
+		{{- end }}
+		{{- if .NextPage }}
+		<a href="{{ .NextPage.RelPermalink }}" class="right arrow">&#8594;</a>
+		{{- end }}
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+<script>
+	const cfURL = 'https://europe-west1-udemy-ticketing-dev.cloudfunctions.net/premium-content-loader';
+
+	document.getElementById('signin').addEventListener( 'submit', function(e) {
+		e.preventDefault();
+
+		// Get creds from form
+		let username = this.querySelector('[name="username"]').value;
+		let password = this.querySelector('[name="password"]').value;
+
+		// Auth
+		fetch( `${cfURL}?username=${username}&password=${password}` ).then( res => {
+			if( res.ok ) {
+				res.text().then( content => {
+					this.innerText = content;
+				})
+			}
+		})
+		return false;
+	})
+</script>
+{{ end }}

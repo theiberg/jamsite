@@ -1,0 +1,9 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "JAMSite"
+theme = "tale"
+copyright = "Copyright 2019 Enso.ai"
+disableKinds = ["section"]
+
+[outputs]
+    home = ["HTML", "JSON"]

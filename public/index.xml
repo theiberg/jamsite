@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JAMSite</title>
+    <link>http://example.org/</link>
+    <description>Recent content on JAMSite</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright 2019 Enso.ai</copyright>
+    <lastBuildDate>Sat, 06 Jun 2020 17:10:18 +0200</lastBuildDate>
+    
+	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>http://example.org/about/</link>
+      <pubDate>Sun, 07 Jun 2020 14:04:29 +0200</pubDate>
+      
+      <guid>http://example.org/about/</guid>
+      <description>About JAMSite Some info about this site at the top level&amp;hellip;
+Aliquam feugiat ultrices dui, sit amet dictum tellus vestibulum sed. Duis aliquam posuere dui, ut tincidunt massa eleifend at. Quisque volutpat pulvinar mi ut congue. Fusce leo velit, pulvinar id feugiat id, laoreet non erat. Vivamus ultricies arcu augue, euismod convallis augue finibus in. Fusce nisl tellus, maximus quis ex eu, rutrum tincidunt ligula. Sed sit amet euismod neque. In commodo tellus quis ligula vehicula rutrum.</description>
+    </item>
+    
+    <item>
+      <title>Photo One</title>
+      <link>http://example.org/photos/photo-one/</link>
+      <pubDate>Sat, 06 Jun 2020 17:10:18 +0200</pubDate>
+      
+      <guid>http://example.org/photos/photo-one/</guid>
+      <description>Photo heading Photo excerpt
+Photo content</description>
+    </item>
+    
+    <item>
+      <title>Second Page</title>
+      <link>http://example.org/second-page/</link>
+      <pubDate>Sat, 06 Jun 2020 16:54:21 +0200</pubDate>
+      
+      <guid>http://example.org/second-page/</guid>
+      <description>Post excerpt
+Main Heading Some content&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Hugo Dog</title>
+      <link>http://example.org/photos/hugo-dog/</link>
+      <pubDate>Sat, 06 Jun 2020 16:47:47 +0200</pubDate>
+      
+      <guid>http://example.org/photos/hugo-dog/</guid>
+      <description>Hugo the Dog! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut ligula in sapien finibus lacinia. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam eu diam mollis, venenatis eros quis, placerat dolor. Maecenas tempor tellus arcu. Nulla consectetur ornare risus, eu posuere nunc. Nullam fermentum cursus ligula, ac pellentesque nunc dignissim sed. Ut tempor lorem purus, id sodales turpis ultricies eu. Vivamus pharetra quam at porttitor auctor.</description>
+    </item>
+    
+    <item>
+      <title>First Page</title>
+      <link>http://example.org/first-page/</link>
+      <pubDate>Sat, 06 Jun 2020 16:42:37 +0200</pubDate>
+      
+      <guid>http://example.org/first-page/</guid>
+      <description>First JAMSite Page Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut ligula in sapien finibus lacinia. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam eu diam mollis, venenatis eros quis, placerat dolor. Maecenas tempor tellus arcu. Nulla consectetur ornare risus, eu posuere nunc. Nullam fermentum cursus ligula, ac pellentesque nunc dignissim sed. Ut tempor lorem purus, id sodales turpis ultricies eu. Vivamus pharetra quam at porttitor auctor.</description>
+    </item>
+    
+  </channel>
+</rss>
