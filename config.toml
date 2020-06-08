@@ -6,4 +6,4 @@ copyright = "Copyright 2019 Enso.ai"
 disableKinds = ["section"]
 
 [outputs]
-    home = ["JSON", "HTML"]
+    home = ["HTML", "JSON"]
