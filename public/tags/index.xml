@@ -7,37 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright 2019 Enso.ai</copyright>
-    <lastBuildDate>Sat, 06 Jun 2020 16:47:47 +0200</lastBuildDate>
     
 	<atom:link href="https://theiberg.github.io/jamsite/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>dog</title>
-      <link>https://theiberg.github.io/jamsite/tags/dog/</link>
-      <pubDate>Sat, 06 Jun 2020 16:47:47 +0200</pubDate>
-      
-      <guid>https://theiberg.github.io/jamsite/tags/dog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>photo</title>
-      <link>https://theiberg.github.io/jamsite/tags/photo/</link>
-      <pubDate>Sat, 06 Jun 2020 16:47:47 +0200</pubDate>
-      
-      <guid>https://theiberg.github.io/jamsite/tags/photo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tongue</title>
-      <link>https://theiberg.github.io/jamsite/tags/tongue/</link>
-      <pubDate>Sat, 06 Jun 2020 16:47:47 +0200</pubDate>
-      
-      <guid>https://theiberg.github.io/jamsite/tags/tongue/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>

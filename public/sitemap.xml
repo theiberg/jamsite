@@ -3,43 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://theiberg.github.io/jamsite/premium/article-one/</loc>
-    <lastmod>2020-06-07T20:33:55+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://theiberg.github.io/jamsite/</loc>
-    <lastmod>2020-06-07T20:33:55+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://theiberg.github.io/jamsite/second-page/</loc>
     <lastmod>2020-06-06T16:54:21+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://theiberg.github.io/jamsite/tags/dog/</loc>
-    <lastmod>2020-06-06T16:47:47+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://theiberg.github.io/jamsite/photos/hugo-dog/</loc>
-    <lastmod>2020-06-06T16:47:47+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://theiberg.github.io/jamsite/tags/photo/</loc>
-    <lastmod>2020-06-06T16:47:47+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://theiberg.github.io/jamsite/tags/</loc>
-    <lastmod>2020-06-06T16:47:47+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://theiberg.github.io/jamsite/tags/tongue/</loc>
-    <lastmod>2020-06-06T16:47:47+02:00</lastmod>
   </url>
   
   <url>
@@ -49,6 +14,14 @@
   
   <url>
     <loc>https://theiberg.github.io/jamsite/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://theiberg.github.io/jamsite/</loc>
+  </url>
+  
+  <url>
+    <loc>https://theiberg.github.io/jamsite/tags/</loc>
   </url>
   
 </urlset>

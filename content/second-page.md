@@ -1,7 +1,7 @@
 ---
 title: "Second Page"
 date: 2020-06-06T16:54:21+02:00
-draft: true
+draft: false
 author: Author Name
 ---
 
