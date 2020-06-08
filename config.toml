@@ -1,4 +1,4 @@
-baseURL = "https://theiberg.github.io/jamsite/"
+baseURL = "https://inspiring-mcclintock-aa0a5e.netlify.app"
 languageCode = "en-us"
 title = "JAMSite"
 theme = "tale"
