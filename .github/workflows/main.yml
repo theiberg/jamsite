@@ -30,7 +30,7 @@ jobs:
     
     # Build site
     - name: Build HUGO Site
-      run: hugo
+      run: hugo -v
     
     # Commit to branch
     - name: Deploy to gh-pages
