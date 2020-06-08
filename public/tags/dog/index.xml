@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dog on JAMSite</title>
-    <link>http://example.org/tags/dog/</link>
+    <link>https://theiberg.github.io/jamsite/tags/dog/</link>
     <description>Recent content in dog on JAMSite</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright 2019 Enso.ai</copyright>
     <lastBuildDate>Sat, 06 Jun 2020 16:47:47 +0200</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/dog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://theiberg.github.io/jamsite/tags/dog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo Dog</title>
-      <link>http://example.org/photos/hugo-dog/</link>
+      <link>https://theiberg.github.io/jamsite/photos/hugo-dog/</link>
       <pubDate>Sat, 06 Jun 2020 16:47:47 +0200</pubDate>
       
-      <guid>http://example.org/photos/hugo-dog/</guid>
+      <guid>https://theiberg.github.io/jamsite/photos/hugo-dog/</guid>
       <description>Hugo the Dog! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut ligula in sapien finibus lacinia. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam eu diam mollis, venenatis eros quis, placerat dolor. Maecenas tempor tellus arcu. Nulla consectetur ornare risus, eu posuere nunc. Nullam fermentum cursus ligula, ac pellentesque nunc dignissim sed. Ut tempor lorem purus, id sodales turpis ultricies eu. Vivamus pharetra quam at porttitor auctor.</description>
     </item>
     

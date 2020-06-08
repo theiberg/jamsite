@@ -7,12 +7,12 @@
 		<title>First Page &middot; JAMSite</title>
 
 		
-  		<link rel="stylesheet" href="/css/style.css">
-		<link rel="stylesheet" href="/css/fonts.css">
+  		<link rel="stylesheet" href="/jamsite/css/style.css">
+		<link rel="stylesheet" href="/jamsite/css/fonts.css">
 		
-		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/jamsite/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/jamsite/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/jamsite/images/apple-touch-icon.png">
 
 		
 		<link href="" rel="alternate" type="application/rss+xml" title="JAMSite" />
@@ -21,19 +21,111 @@
     <body>
         		<nav class="nav">
 			<div class="nav-container">
-				<a href="/">
+				<a href="/jamsite/">
 					<h2 class="nav-title">JAMSite</h2>
 				</a>
-				<ul>
+				<style media="screen">
+
+    .nav {
+        overflow: visible;
+        padding: 0.1rem;
+    }
+
+    #search {
+        float: right;
+        position: relative;
+        bottom: 0.2rem;
+        padding: 0.5rem 1rem;
+        width: 15rem;
+        border: 1px solid lightgray;
+    }
+
+    #search-results {
+        position: absolute;
+        background: white;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.35);
+        right: 0;
+    }
+
+    #search-results a {
+        display: block;
+        border-bottom: 1px solid lightgray;
+        width: 12rem;
+        padding: 0.5rem;
+        font-weight: bold;
+    }
+
+    #search-results a:hover {
+        background-color: dodgerblue;
+        color: white;
+    }
+
+    #search-results.hide {
+        display: none;
+    }
+</style>
+
+<input type="text" id="search" placeholder="Search">
+<div id="search-results" class="hide">
+</div>
+
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script>
+
+    const search = document.getElementById('search');
+    const results = document.getElementById('search-results');
+
     
+    search.addEventListener( 'focus', e => {
+        results.classList.remove('hide');
+    })
+    search.addEventListener( 'blur', e => {
+        setTimeout( () => {
+            results.classList.add('hide');
+        }, 100)
+    })
+
     
-</ul>
+    search.addEventListener('keyup', function() {
+        results.innerHTML = '';
+        if( !this.value ) return;
+
+        
+        let lunrResults = window.idx.search( this.value );
+
+        lunrResults.forEach( page => {
+
+            
+            let pageMeta = page.ref.split('||');
+            let pageLink = document.createElement('a');
+            pageLink.innerText = pageMeta[0];
+            pageLink.href = pageMeta[1];
+            results.appendChild( pageLink );
+        })
+    })
+
+    fetch( "https://theiberg.github.io/jamsite/" + '/index.json' ).then( res => {
+        
+        res.json().then( searchIndex => {
+
+            window.idx = lunr(function () {
+                this.ref('meta')
+                this.field('title')
+                this.field('content')
+
+                searchIndex.forEach( page => this.add(page) );
+            })
+        })
+    })
+
+</script>
 			</div>
 		</nav>
 
         
 
 <main>
+
 	<div class="post">
 		<div class="post-info">
     <span>Written by</span>
@@ -52,11 +144,69 @@
 <p>Sed libero diam, cursus eget tristique sit amet, pharetra vitae ipsum. Vivamus gravida volutpat nulla, sit amet venenatis urna posuere non. Vestibulum tempus nisl quis neque molestie bibendum. Vivamus aliquam tellus quam, id auctor libero iaculis vitae. Ut ut elit ultricies, fringilla dui a, consequat massa. Etiam sed elit viverra, pharetra nulla ut, facilisis odio. Mauris tincidunt bibendum quam vel tempor. Nam id sapien tristique, tempor mi vel, dictum velit. Mauris eget sapien justo.</p>
 
 
+		<style media="screen">
+    #contact {
+        background: #DEDEDE;
+        border-radius: 5px;
+        padding: 1rem;
+    }
+
+    #contact input, #contact textarea {
+         display: block;
+         padding: 0.5rem 1rem;
+         width: 100%;
+         font-size: 1.25rem;
+         border-radius: 5px;
+         margin-bottom: 1rem;
+         outline: none;
+         border: none;
+    }
+
+    #contact button {
+        font-size: 1.25rem;
+        background: dodgerblue;
+        color: white;
+        width: 10rem;
+    }
+</style>
+
+<script>
+
+    function handleContact() {
+        
+        let contactForm = document.getElementById('contact');
+        let email  = contactForm.elements[0]
+        let message  = contactForm.elements[1]
+        
+        let formData = {}
+        formData[email.name] = email.value
+        formData[message.name] = message.value
+
+        fetch('http://localhost:2222/', {
+            method: 'post',
+            mode: 'no-cors',
+            body: JSON.stringify(formData)
+        }).then( () => {
+            
+            contactForm.innerHTML = '<strong>Message sent!</strong>'
+        })
+
+        
+        return false;
+    }
+</script>
+
+<form id="contact" onsubmit="return handleContact()">
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Message" cols="80" rows="8"></textarea>
+    <button type="submit" name="button">Send Message</button>
+</form>
+
 		
 	</div>
 
 	<div class="pagination">
-		<a href="/photos/hugo-dog/" class="right arrow">&#8594;</a>
+		<a href="/jamsite/photos/hugo-dog/" class="right arrow">&#8594;</a>
 
 		<a href="#" class="top">Top</a>
 	</div>
@@ -65,7 +215,7 @@
 
         		<footer>
 			<span>
-			&copy; <time datetime="2020-06-07 14:13:59.316586 &#43;0200 CEST m=&#43;0.071800417">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2020-06-08 09:07:38.967841 &#43;0200 CEST m=&#43;0.074943716">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 

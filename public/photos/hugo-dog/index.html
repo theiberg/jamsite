@@ -7,12 +7,12 @@
 		<title>Hugo Dog &middot; JAMSite</title>
 
 		
-  		<link rel="stylesheet" href="/css/style.css">
-		<link rel="stylesheet" href="/css/fonts.css">
+  		<link rel="stylesheet" href="/jamsite/css/style.css">
+		<link rel="stylesheet" href="/jamsite/css/fonts.css">
 		
-		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/jamsite/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/jamsite/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/jamsite/images/apple-touch-icon.png">
 
 		
 		<link href="" rel="alternate" type="application/rss+xml" title="JAMSite" />
@@ -21,62 +21,193 @@
     <body>
         		<nav class="nav">
 			<div class="nav-container">
-				<a href="/">
+				<a href="/jamsite/">
 					<h2 class="nav-title">JAMSite</h2>
 				</a>
-				<ul>
+				<style media="screen">
+
+    .nav {
+        overflow: visible;
+        padding: 0.1rem;
+    }
+
+    #search {
+        float: right;
+        position: relative;
+        bottom: 0.2rem;
+        padding: 0.5rem 1rem;
+        width: 15rem;
+        border: 1px solid lightgray;
+    }
+
+    #search-results {
+        position: absolute;
+        background: white;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.35);
+        right: 0;
+    }
+
+    #search-results a {
+        display: block;
+        border-bottom: 1px solid lightgray;
+        width: 12rem;
+        padding: 0.5rem;
+        font-weight: bold;
+    }
+
+    #search-results a:hover {
+        background-color: dodgerblue;
+        color: white;
+    }
+
+    #search-results.hide {
+        display: none;
+    }
+</style>
+
+<input type="text" id="search" placeholder="Search">
+<div id="search-results" class="hide">
+</div>
+
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script>
+
+    const search = document.getElementById('search');
+    const results = document.getElementById('search-results');
+
     
+    search.addEventListener( 'focus', e => {
+        results.classList.remove('hide');
+    })
+    search.addEventListener( 'blur', e => {
+        setTimeout( () => {
+            results.classList.add('hide');
+        }, 100)
+    })
+
     
-</ul>
+    search.addEventListener('keyup', function() {
+        results.innerHTML = '';
+        if( !this.value ) return;
+
+        
+        let lunrResults = window.idx.search( this.value );
+
+        lunrResults.forEach( page => {
+
+            
+            let pageMeta = page.ref.split('||');
+            let pageLink = document.createElement('a');
+            pageLink.innerText = pageMeta[0];
+            pageLink.href = pageMeta[1];
+            results.appendChild( pageLink );
+        })
+    })
+
+    fetch( "https://theiberg.github.io/jamsite/" + '/index.json' ).then( res => {
+        
+        res.json().then( searchIndex => {
+
+            window.idx = lunr(function () {
+                this.ref('meta')
+                this.field('title')
+                this.field('content')
+
+                searchIndex.forEach( page => this.add(page) );
+            })
+        })
+    })
+
+</script>
 			</div>
 		</nav>
 
         
 
 <main>
+
 	<div class="post">
-
-		TEST
-		<hr>
-		About by Thomas Heiberg<br>
-		JAMSite by <br>
-		Photo One by Author Name<br>
-		Second Page by Author Name<br>
-		dog by <br>
-		Hugo Dog by <br>
-		photo by <br>
-		Tags by <br>
-		tongue by <br>
-		First Page by Thomas Heiberg<br>
-		Categories by <br>
-		<hr>
-
+		<div class="post-info">
+    <span>Written by</span>
+        
+        <br>
+        <span>on&nbsp;</span><time datetime="2020-06-06 16:47:47 &#43;0200 CEST">June 6, 2020</time>
+</div>
 		<h1 class="post-title">Hugo Dog</h1>
 <div class="post-line"></div>
-		<div style="text-align: center; width: 100%; color: dodgerblue; padding-bottom: 1rem;">
-<strong> #photo </strong>
-<strong> #dog </strong>
-<strong> #tongue </strong>
-</div>
 
 		
 
-		<div style="padding:1rem; background:powderblue"><h2 id="hugo-the-dog">Hugo the Dog!</h2>
+		<h2 id="hugo-the-dog">Hugo the Dog!</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut ligula in sapien finibus lacinia. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam eu diam mollis, venenatis eros quis, placerat dolor. Maecenas tempor tellus arcu. Nulla consectetur ornare risus, eu posuere nunc. Nullam fermentum cursus ligula, ac pellentesque nunc dignissim sed. Ut tempor lorem purus, id sodales turpis ultricies eu. Vivamus pharetra quam at porttitor auctor. Nulla fermentum sollicitudin elit eu rutrum. Vestibulum et vestibulum tortor. Mauris sed varius diam. Fusce vestibulum rutrum hendrerit. Morbi non nisl consectetur, volutpat justo nec, dapibus justo.</p>
 <p><img src="/hugo-the-dog.jpg" alt="HUGO the dog"></p>
 <p>Aliquam feugiat ultrices dui, sit amet dictum tellus vestibulum sed. Duis aliquam posuere dui, ut tincidunt massa eleifend at. Quisque volutpat pulvinar mi ut congue. Fusce leo velit, pulvinar id feugiat id, laoreet non erat. Vivamus ultricies arcu augue, euismod convallis augue finibus in. Fusce nisl tellus, maximus quis ex eu, rutrum tincidunt ligula. Sed sit amet euismod neque. In commodo tellus quis ligula vehicula rutrum. Mauris id blandit nisi. In eu commodo lacus. Etiam imperdiet orci turpis, quis aliquam erat porta quis. Fusce sed neque purus. Morbi quis condimentum augue. Sed et ipsum dictum, mattis eros sit amet, dignissim leo. Phasellus placerat venenatis tellus, placerat blandit diam rutrum id.</p>
-</div>
 
-		
-<small>Photo taken by Thomas Heiberg</small>
-<br><textarea style="width: 100%;font-size: 1.25rem;padding: 1rem;" placeholder="Leave a comment for 'Hugo Dog'"></textarea>
+
+		<style media="screen">
+    #contact {
+        background: #DEDEDE;
+        border-radius: 5px;
+        padding: 1rem;
+    }
+
+    #contact input, #contact textarea {
+         display: block;
+         padding: 0.5rem 1rem;
+         width: 100%;
+         font-size: 1.25rem;
+         border-radius: 5px;
+         margin-bottom: 1rem;
+         outline: none;
+         border: none;
+    }
+
+    #contact button {
+        font-size: 1.25rem;
+        background: dodgerblue;
+        color: white;
+        width: 10rem;
+    }
+</style>
+
+<script>
+
+    function handleContact() {
+        
+        let contactForm = document.getElementById('contact');
+        let email  = contactForm.elements[0]
+        let message  = contactForm.elements[1]
+        
+        let formData = {}
+        formData[email.name] = email.value
+        formData[message.name] = message.value
+
+        fetch('http://localhost:2222/', {
+            method: 'post',
+            mode: 'no-cors',
+            body: JSON.stringify(formData)
+        }).then( () => {
+            
+            contactForm.innerHTML = '<strong>Message sent!</strong>'
+        })
+
+        
+        return false;
+    }
+</script>
+
+<form id="contact" onsubmit="return handleContact()">
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Message" cols="80" rows="8"></textarea>
+    <button type="submit" name="button">Send Message</button>
+</form>
 
 		
 	</div>
 
 	<div class="pagination">
-		<a href="/first-page/" class="left arrow">&#8592;</a>
-		<a href="/second-page/" class="right arrow">&#8594;</a>
+		<a href="/jamsite/first-page/" class="left arrow">&#8592;</a>
+		<a href="/jamsite/second-page/" class="right arrow">&#8594;</a>
 
 		<a href="#" class="top">Top</a>
 	</div>
@@ -85,7 +216,7 @@
 
         		<footer>
 			<span>
-			&copy; <time datetime="2020-06-07 14:13:59.315323 &#43;0200 CEST m=&#43;0.070537289">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2020-06-08 09:07:38.967539 &#43;0200 CEST m=&#43;0.074641647">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 

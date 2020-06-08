@@ -3,57 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/about/</loc>
-    <lastmod>2020-06-07T14:04:29+02:00</lastmod>
+    <loc>https://theiberg.github.io/jamsite/premium/article-one/</loc>
+    <lastmod>2020-06-07T20:33:55+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
-    <lastmod>2020-06-06T17:10:18+02:00</lastmod>
+    <loc>https://theiberg.github.io/jamsite/</loc>
+    <lastmod>2020-06-07T20:33:55+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/photos/photo-one/</loc>
-    <lastmod>2020-06-06T17:10:18+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/second-page/</loc>
+    <loc>https://theiberg.github.io/jamsite/second-page/</loc>
     <lastmod>2020-06-06T16:54:21+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/tags/dog/</loc>
+    <loc>https://theiberg.github.io/jamsite/tags/dog/</loc>
     <lastmod>2020-06-06T16:47:47+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/photos/hugo-dog/</loc>
+    <loc>https://theiberg.github.io/jamsite/photos/hugo-dog/</loc>
     <lastmod>2020-06-06T16:47:47+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/tags/photo/</loc>
+    <loc>https://theiberg.github.io/jamsite/tags/photo/</loc>
     <lastmod>2020-06-06T16:47:47+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://theiberg.github.io/jamsite/tags/</loc>
     <lastmod>2020-06-06T16:47:47+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/tags/tongue/</loc>
+    <loc>https://theiberg.github.io/jamsite/tags/tongue/</loc>
     <lastmod>2020-06-06T16:47:47+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/first-page/</loc>
+    <loc>https://theiberg.github.io/jamsite/first-page/</loc>
     <lastmod>2020-06-06T16:42:37+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://theiberg.github.io/jamsite/categories/</loc>
   </url>
   
 </urlset>

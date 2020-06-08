@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>Tags &middot; JAMSite</title>
+		<title>Article One &middot; JAMSite</title>
 
 		
   		<link rel="stylesheet" href="/jamsite/css/style.css">
@@ -15,7 +15,7 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="/jamsite/images/apple-touch-icon.png">
 
 		
-		<link href="/jamsite/tags/index.xml" rel="alternate" type="application/rss+xml" title="JAMSite" />
+		<link href="" rel="alternate" type="application/rss+xml" title="JAMSite" />
 	</head>
 
     <body>
@@ -123,20 +123,89 @@
 		</nav>
 
         
+
+<style media="screen">
+    #signin {
+        background: #DEDEDE;
+        border-radius: 5px;
+        padding: 1rem;
+    }
+
+    #signin input, #signin button {
+         display: block;
+         padding: 0.5rem 1rem;
+         width: 100%;
+         font-size: 1.25rem;
+         border-radius: 5px;
+         margin-bottom: 1rem;
+         outline: none;
+         border: none;
+    }
+
+    #signin button {
+        background: dodgerblue;
+        color: white;
+    }
+</style>
+
 <main>
-    <h1>Tags</h1>
-	<div class="catalogue">
-        <ul><li><a href="https://theiberg.github.io/jamsite/tags/dog/">dog</a></li><li><a href="https://theiberg.github.io/jamsite/tags/photo/">photo</a></li><li><a href="https://theiberg.github.io/jamsite/tags/tongue/">tongue</a></li></ul>
+
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Author Name
+        <br>
+        <span>on&nbsp;</span><time datetime="2020-06-07 20:33:55 &#43;0200 CEST">June 7, 2020</time>
+</div>
+		<h1 class="post-title">Article One</h1>
+<div class="post-line"></div>
+
+		
+
+		<div class="premium-content">
+			<h2 style="text-align: center;">Sign in to view premium content</h2>
+			<form id="signin">
+				<input type="text" name="username" placeholder="username" value="">
+				<input type="password" name="password" placeholder="password" value="">
+				<button type="submit" name="button">Sign in</button>
+			</form>
+		</div>
+
+		
 	</div>
-	
-	<div class="pagination"><span>1</span>
+
+	<div class="pagination">
+		<a href="/jamsite/second-page/" class="left arrow">&#8592;</a>
+
+		<a href="#" class="top">Top</a>
 	</div>
 </main>
 
+<script>
+	const cfURL = 'https://europe-west1-udemy-ticketing-dev.cloudfunctions.net/premium-content-loader';
+
+	document.getElementById('signin').addEventListener( 'submit', function(e) {
+		e.preventDefault();
+
+		
+		let username = this.querySelector('[name="username"]').value;
+		let password = this.querySelector('[name="password"]').value;
+
+		
+		fetch( `${cfURL}?username=${username}&password=${password}` ).then( res => {
+			if( res.ok ) {
+				res.text().then( content => {
+					this.innerText = content;
+				})
+			}
+		})
+		return false;
+	})
+</script>
 
         		<footer>
 			<span>
-			&copy; <time datetime="2020-06-08 09:07:38.965448 &#43;0200 CEST m=&#43;0.072550918">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2020-06-08 09:07:38.965603 &#43;0200 CEST m=&#43;0.072705962">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 
