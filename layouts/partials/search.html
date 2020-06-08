@@ -78,7 +78,7 @@
         })
     })
 
-    fetch( '/index.json' ).then( res => {
+    fetch( {{ .Site.BaseURL }} + '/index.json' ).then( res => {
         // Parse JSON
         res.json().then( searchIndex => {
 
